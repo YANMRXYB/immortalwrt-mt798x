@@ -8,7 +8,7 @@ include $(INCLUDE_DIR)/kernel.mk
 
 PKG_NAME:=mt_wifi
 
-MT7981_FW_DIR := mt7981-asus-ax57
+MT7981_FW_DIR := mt7981-fw-20240613
 MT7986_FW_DIR := mt7986-asus-ax6000
 
 ifeq ($(CONFIG_MTK_CHIP_MT7981),y)
@@ -344,7 +344,7 @@ if [ "$$(CONFIG_MTK_WIFI_FW_BIN_LOAD)" = "y" ]; then \
 			$(1)/lib/firmware/; \
 		fi; \
 		if [ "$$(CONFIG_MTK_WIFI_SKU_TYPE)" = "AX4200" ] ; then \
-			$(INSTALL_BIN) $(PKG_BUILD_DIR)/bin/mt7986/rebb/MT7986_ePAeLNA_EEPROM_ONEADIE_DBDC.bin \
+			$(INSTALL_BIN) ./files/$$(MT7986_FW_DIR)/MT7986_ePAeLNA_EEPROM_ONEADIE_DBDC.bin \
 			$(1)/lib/firmware/; \
 		fi; \
 	fi; \
